@@ -7,17 +7,23 @@
   linear="true"
 >
   <mat-step editable="false">
-    <h1>paso 1</h1>
-    <button>Click</button>
+    <steps-paso1></steps-paso1>
+    <stepper-components-botones-siguiente-cancelar
+      (reiniciarStepper)="stepper.reset()"
+    ></stepper-components-botones-siguiente-cancelar>
   </mat-step>
 
   <mat-step editable="false">
     <h1>paso 2</h1>
-    <button>Click</button>
+    <stepper-components-botones-siguiente-cancelar
+      (reiniciarStepper)="stepper.reset()"
+    ></stepper-components-botones-siguiente-cancelar>
   </mat-step>
 
   <mat-step editable="false">
     <h1>paso 3</h1>
-    <button>Click</button>
+    <stepper-components-botones-siguiente-cancelar
+      (reiniciarStepper)="stepper.reset()"
+    ></stepper-components-botones-siguiente-cancelar>
   </mat-step>
 </mat-horizontal-stepper>

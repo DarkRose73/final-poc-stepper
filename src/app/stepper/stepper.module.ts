@@ -7,15 +7,18 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
 
 import { StepperComponent } from './pages/stepper/stepper.component';
+import { BotonesSiguienteCancelarComponent } from './components/botones-siguiente-cancelar/botones-siguiente-cancelar.component';
+import { StepsModule } from './components/steps/steps.module';
 
 @NgModule({
-  declarations: [StepperComponent],
+  declarations: [StepperComponent, BotonesSiguienteCancelarComponent],
   imports: [
     CommonModule,
     MatStepperModule,
     MatButtonModule,
     MatSlideToggleModule,
     MatIconModule,
+    StepsModule,
   ],
   exports: [StepperComponent],
 })
