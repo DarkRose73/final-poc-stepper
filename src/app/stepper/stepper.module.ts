@@ -1,13 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StepxComponent } from './components/stepx/stepx.component';
-import { Step1Component } from './components/step1/step1.component';
+
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatIconModule } from '@angular/material/icon';
+
+import { StepperComponent } from './pages/stepper/stepper.component';
 
 @NgModule({
-  declarations: [
-    StepxComponent,
-    Step1Component
+  declarations: [StepperComponent],
+  imports: [
+    CommonModule,
+    MatStepperModule,
+    MatButtonModule,
+    MatSlideToggleModule,
+    MatIconModule,
   ],
-  imports: [CommonModule],
+  exports: [StepperComponent],
 })
 export class StepperModule {}
