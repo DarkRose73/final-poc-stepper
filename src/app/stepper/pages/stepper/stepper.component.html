@@ -5,53 +5,54 @@
   headerPosition="bottom"
   labelPosition="bottom"
   linear="true"
+  (selectionChange)="cambioPaso($event)"
 >
-  <mat-step [completed]="true" editable="false" optional="false">
-    <steps-paso1></steps-paso1>
+  <mat-step [completed]="paso1Completado" editable="false" optional="false">
+    <steps-paso1 (completado)="completarPaso($event)"></steps-paso1>
     <stepper-components-botones-siguiente-cancelar
-      (reiniciarStepper)="stepper.reset()"
+      (reiniciarStepper)="stepper.reset(); reiniciarPasos()"
     ></stepper-components-botones-siguiente-cancelar>
   </mat-step>
 
-  <mat-step [completed]="true" editable="false" optional="false">
+  <mat-step [completed]="paso2Completado" editable="false" optional="false">
     <steps-paso2></steps-paso2>
     <stepper-components-botones-siguiente-cancelar
-      (reiniciarStepper)="stepper.reset()"
+      (reiniciarStepper)="stepper.reset(); reiniciarPasos()"
     ></stepper-components-botones-siguiente-cancelar>
   </mat-step>
 
-  <mat-step [completed]="true" editable="false" optional="false">
+  <mat-step [completed]="paso3Completado" editable="false" optional="false">
     <steps-paso3></steps-paso3>
     <stepper-components-botones-siguiente-cancelar
-      (reiniciarStepper)="stepper.reset()"
+      (reiniciarStepper)="stepper.reset(); reiniciarPasos()"
     ></stepper-components-botones-siguiente-cancelar>
   </mat-step>
 
-  <mat-step [completed]="true" editable="false" optional="true">
+  <mat-step [completed]="paso4Completado" editable="false" optional="true">
     <steps-paso4></steps-paso4>
     <stepper-components-botones-siguiente-cancelar
-      (reiniciarStepper)="stepper.reset()"
+      (reiniciarStepper)="stepper.reset(); reiniciarPasos()"
     ></stepper-components-botones-siguiente-cancelar>
   </mat-step>
 
-  <mat-step [completed]="true" editable="false" optional="false">
+  <mat-step [completed]="paso5Completado" editable="false" optional="false">
     <steps-paso5></steps-paso5>
     <stepper-components-botones-siguiente-cancelar
-      (reiniciarStepper)="stepper.reset()"
+      (reiniciarStepper)="stepper.reset(); reiniciarPasos()"
     ></stepper-components-botones-siguiente-cancelar>
   </mat-step>
 
-  <mat-step [completed]="true" editable="false" optional="false">
+  <mat-step [completed]="paso6Completado" editable="false" optional="false">
     <steps-paso6></steps-paso6>
     <stepper-components-botones-siguiente-cancelar
-      (reiniciarStepper)="stepper.reset()"
+      (reiniciarStepper)="stepper.reset(); reiniciarPasos()"
     ></stepper-components-botones-siguiente-cancelar>
   </mat-step>
 
-  <mat-step [completed]="true" editable="false" optional="false">
+  <mat-step [completed]="paso7Completado" editable="false" optional="false">
     <steps-paso7></steps-paso7>
     <stepper-components-botones-siguiente-cancelar
-      (reiniciarStepper)="stepper.reset()"
+      (reiniciarStepper)="stepper.reset(); reiniciarPasos()"
     ></stepper-components-botones-siguiente-cancelar>
   </mat-step>
 

@@ -3,7 +3,7 @@ export interface CacheStore {
   estadoPasos: EstadoPaso[];
 }
 
-interface EstadoPaso {
+export interface EstadoPaso {
   paso: number;
   estado: boolean;
 }
