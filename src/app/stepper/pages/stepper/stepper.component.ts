@@ -4,24 +4,24 @@ import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { EstadoPaso } from '../../interfaces/cache-store.interface';
 import { MatStepper } from '@angular/material/stepper';
 
+const ESTADO_INICIAL_PASOS = [false, false, false, false, false, false, false];
+const PASO_INICIAL = 0;
+
 @Component({
   selector: 'stepper-stepper',
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.css'],
 })
 export class StepperComponent implements OnInit {
-  public pasosStepper = [false, false, false, false, false, false, false];
-  public paso1Completado: boolean = false;
-  public paso2Completado: boolean = true;
-  public paso3Completado: boolean = false;
-  public paso4Completado: boolean = false;
-  public paso5Completado: boolean = false;
-  public paso6Completado: boolean = false;
-  public paso7Completado: boolean = false;
+  public pasosStepper = ESTADO_INICIAL_PASOS;
+  public pasoInicial = PASO_INICIAL;
 
   constructor(private stepperService: StepperService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.pasosStepper = [false, false, false, false, false, false, false];
+    this.pasoInicial = 0;
+  }
 
   cambioPaso(e: StepperSelectionEvent): void {
     console.log('Indice seleccionado ', e.previouslySelectedIndex);
@@ -29,8 +29,8 @@ export class StepperComponent implements OnInit {
   }
 
   completarPaso(estadoPaso: EstadoPaso) {
-    this.paso1Completado = estadoPaso.estado;
-    console.log(estadoPaso.estado);
+    this.pasosStepper[estadoPaso.paso] = estadoPaso.estado;
+    console.log(this.pasosStepper);
   }
 
   reiniciarPasos() {
