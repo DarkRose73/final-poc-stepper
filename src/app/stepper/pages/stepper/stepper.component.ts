@@ -19,8 +19,18 @@ export class StepperComponent implements OnInit {
   constructor(private stepperService: StepperService) {}
 
   ngOnInit(): void {
-    this.pasosStepper = [false, false, false, false, false, false, false];
-    this.pasoInicial = 0;
+    this.cargarPasosCompletados();
+    this.cargarUltimoPaso();
+  }
+
+  private cargarUltimoPaso(): void {
+    this.pasoInicial = this.stepperService.cacheStore.ultimoPaso;
+  }
+
+  private cargarPasosCompletados(): void {
+    this.stepperService.cacheStore.estadoPasos.forEach((paso, indice) => {
+      this.pasosStepper[indice] = paso.estado;
+    });
   }
 
   cambioPaso(e: StepperSelectionEvent): void {
