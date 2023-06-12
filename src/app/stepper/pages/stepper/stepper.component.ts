@@ -44,6 +44,7 @@ export class StepperComponent implements OnInit {
   }
 
   reiniciarPasos() {
+    console.log('REINICIAR PASOS');
     this.stepperService.reiniciarPasos();
   }
 }

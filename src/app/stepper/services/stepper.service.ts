@@ -34,5 +34,6 @@ export class StepperService {
 
   reiniciarPasos() {
     this.cacheStore = valorInicialPasos;
+    this.guardarCacheLocalStorage();
   }
 }
